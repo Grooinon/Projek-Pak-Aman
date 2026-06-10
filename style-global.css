@@ -1,0 +1,104 @@
+/* STYLE GLOBAL, DROPDOWN & INTERAKSI CORE*/
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #f43f5e;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+
+/*Navbar & Dropdown Layout*/
+.main-navbar {
+    display: block; width: 100%; position: fixed; top: 0; left: 0;
+    padding: 1.5rem 10%; background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.main-navbar::after { content: ""; display: table; clear: both; }
+.nav-logo { float: left; }
+.nav-logo h2 { font-size: 1.5rem; font-weight: 700; }
+.nav-logo h2 span { color: var(--primary-color); }
+.nav-links { float: right; list-style: none; margin-top: 0.25rem; position: relative; }
+.nav-links li { display: inline-block; margin-left: 1rem; position: relative; }
+
+.nav-item {
+    color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem;
+    transition: var(--transition-smooth); padding: 0.5rem 1.2rem; border-radius: 8px; display: inline-block;
+}
+.nav-item:hover, .nav-item.active { color: var(--text-main); background-color: var(--primary-color); }
+
+/*DROP DOWN INTERACTION (MouseOver / Hover)*/
+.dropdown-wrapper .drop-icon { font-size: 0.8rem; margin-left: 4px; transition: var(--transition-smooth); }
+.dropdown-menu {
+    position: absolute; top: 130%; left: 0; background-color: var(--bg-card);
+    list-style: none; width: 200px; border-radius: 12px; padding: 0.8rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0; visibility: hidden;
+    transform: translateY(15px); transition: var(--transition-smooth); box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+.dropdown-menu li { display: block; margin: 0; width: 100%; }
+.dropdown-link {
+    display: block; padding: 0.6rem 1.5rem; color: var(--text-muted);
+    text-decoration: none; font-size: 0.9rem; transition: var(--transition-smooth);
+}
+/* MouseOver & Hover Trigger Dropdown */
+.dropdown-wrapper:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-wrapper:hover .drop-icon { transform: rotate(180deg); color: var(--text-main); }
+.dropdown-link:hover { background-color: rgba(255,255,255,0.05); color: var(--primary-color); padding-left: 1.8rem; }
+
+/* Auth Nav Button */
+.auth-nav-btn { border: 1px solid var(--primary-color); color: var(--primary-color); }
+.auth-nav-btn:hover { background-color: var(--primary-color); color: var(--text-main); }
+
+/* --- ONCLICK FEEDBACK MICRO-INTERACTION --- */
+.click-animate:active, .onclick-effect:active { transform: scale(0.92); }
+.clicked-state { background-color: var(--primary-dark) !important; }
+
+/* App Container Layout */
+.app-container { margin-top: 90px; padding: 3rem 10%; width: 100%; }
+.page-section { display: none; width: 100%; min-height: 75vh; }
+.page-section.section-active { display: block; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-header h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.section-header p { color: var(--text-muted); font-size: 1rem; }
+
+/* --- LAYER AUTH (LOGIN & REGISTER FORM) --- */
+.auth-card {
+    background-color: var(--bg-card); width: 100%; max-width: 420px;
+    margin: 0 auto; padding: 3rem 2.5rem; border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+.auth-card h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.4rem; text-align: center; }
+.auth-subtitle { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2rem; }
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; font-size: 0.88rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-main); }
+.input-field {
+    width: 100%; padding: 0.9rem 1.2rem; background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: var(--text-main);
+    font-size: 0.95rem; transition: var(--transition-smooth);
+}
+/* Form Input Hover & MouseOver Interaction */
+.input-field:hover { border-color: var(--text-muted); }
+.input-field:focus { border-color: var(--primary-color); outline: none; background-color: rgba(0,0,0,0.3); }
+.auth-btn {
+    width: 100%; padding: 1rem; background-color: var(--primary-color); border: none;
+    border-radius: 12px; color: var(--text-main); font-weight: 600; font-size: 1rem;
+    cursor: pointer; transition: var(--transition-smooth); margin-top: 1rem;
+}
+.auth-btn:hover { background-color: var(--primary-dark); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); }
+.auth-switch { text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: var(--text-muted); }
+.auth-switch a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+.auth-switch a:hover { text-decoration: underline; }
+.layout-center { width: 100%; padding-top: 2rem; display: flex; justify-content: center; align-items: center; }
+
+/* CORE ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { transform: translateX(-60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.93); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6); } 70% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(99, 102, 241, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); } }
+@keyframes flipIn { from { transform: perspective(500px) rotateY(80deg); opacity: 0; } to { transform: perspective(500px) rotateY(0deg); opacity: 1; } }

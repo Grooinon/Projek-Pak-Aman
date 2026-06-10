@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project pak aman</title>
+    
+    <!-- Link CSS Global -->
+    <link rel="stylesheet" href="style-global.css">
+    
+    <!-- Link CSS Modular Per Menu -->
+    <link rel="stylesheet" href="style-home.css">
+    <link rel="stylesheet" href="style-menu.css">
+    <link rel="stylesheet" href="style-cart.css">
+    <link rel="stylesheet" href="style-account.css">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR UTAMA (Dengan Dropdown & MouseOver Support) -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <h2>Brand<span>Space</span></h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active onclick-effect"><i class="fa-solid fa-house"></i> Imah</a></li>
+            
+            <!-- Dropdown Menu Item -->
+            <li class="dropdown-wrapper mouseover-effect">
+                <a href="#menu" class="nav-item"><i class="fa-solid fa-utensils"></i> Menu <i class="fa-solid fa-chevron-down drop-icon"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#menu" class="dropdown-link" onclick="filterCategory('coffee')">Kopi Buatan Sendiri (nescafe Biru hehe)</a></li>
+                    <li><a href="#menu" class="dropdown-link" onclick="filterCategory('food')">Makanan Sehat</a></li>
+                    <li><a href="#menu" class="dropdown-link" onclick="filterCategory('dessert')">Makanan Ringan</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#cart" class="nav-item onclick-effect"><i class="fa-solid fa-basket-shopping"></i> Karung Belanjaan</a></li>
+            <li><a href="#account" class="nav-item onclick-effect"><i class="fa-solid fa-user"></i> Akun</a></li>
+            <li><a href="#login" class="nav-item auth-nav-btn onclick-effect">Lojin</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTAINER UTAMA -->
+    <main class="app-container">
+
+        <!-- 1. HERO SECTION (HOME) -->
+        <section id="home" class="page-section section-active">
+            <div class="home-wrapper">
+                <div class="hero-content">
+                    <h1 class="fade-in header-hover">Temukan Beberapa Hal Menarik Guyss hehe</h1>
+                    <p class="fade-in-delayed">Project Pak Aman Yang di kerjakan sepenuh hati yang sudah saya anggap anak sendiri.</p>
+                    
+                    <!-- Link Move Section (On Click & Hover Animasi) -->
+                    <a href="#menu" class="cta-button pulse link-move-section">
+                        Cari Makanan Lu <i class="fa-solid fa-arrow-right arrow-animate"></i>
+                    </a>
+                </div>
+                <div class="hero-image slide-up mouseover-card">
+                    <div class="image-placeholder ripple-effect">
+                        <i class="fa-regular fa-image"></i>
+                        <span class="hover-overlay-text">Interactive View</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECTION MENU -->
+        <section id="menu" class="page-section">
+            <div class="section-header">
+                <h2>Makanan Sehari Hari</h2>
+                <p>Makan Yang ada aja ya</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Card Item 1 (Dengan Hover & Click Effect) -->
+                <div class="menu-card scale-up hover-trigger" onclick="handleCardClick('Coffee')">
+                    <div class="card-img"><i class="fa-solid fa-mug-hot"></i></div>
+                    <div class="card-body">
+                        <h3>Nescafe Biru</h3>
+                        <p>Nescafe Biru Biasa sih ngga ada yang spesial wkwk.</p>
+                        <div class="card-footer">
+                            <span class="price">Rp 45.000 (pemerasan sih jatohnya)</span>
+                            <button class="add-to-cart-btn click-animate"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Item 2 -->
+                <div class="menu-card scale-up hover-trigger" onclick="handleCardClick('Bowl')">
+                    <div class="card-img"><i class="fa-solid fa-bowl-food"></i></div>
+                    <div class="card-body">
+                        <h3>Pisang Rebus</h3>
+                        <p>Biasa Ibu Ibu kalo lagi Gabut Masak Pisang Rebus.</p>
+                        <div class="card-footer">
+                            <span class="price">Rp 55.000 (yup Pemerasan Juga ini)</span>
+                            <button class="add-to-cart-btn click-animate"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECTION CART -->
+        <section id="cart" class="page-section">
+            <div class="section-header">
+                <h2>Belanjaan Lu Bro</h2>
+            </div>
+            <div class="cart-layout">
+                <div class="cart-items-list">
+                    <div class="cart-item slide-in-left">
+                        <i class="fa-solid fa-mug-hot item-icon"></i>
+                        <div class="item-details">
+                            <h4>Nescafe Biru</h4>
+                            <p>Rp 45.000</p>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="click-animate"><i class="fa-solid fa-minus"></i></button>
+                            <span>1</span>
+                            <button class="click-animate"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary slide-in-right">
+                    <h3>Orderan Nya Om</h3>
+                    <div class="summary-line"><span>Sub total</span> <span>Rp 45.000</span></div>
+                    <div class="summary-line"><span> Pajak Apbn (10%)</span> <span>Rp 4.500</span></div>
+                    <div class="summary-line line-break"></div>
+                    <div class="summary-line total"><span>Total</span> <span>Rp 49.500</span></div>
+                    <button class="checkout-btn click-animate">Langsung Bayar (ngga nerima kasbon)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECTION ACCOUNT -->
+        <section id="account" class="page-section">
+            <div class="account-container layout-center">
+                <div class="profile-card flip-in">
+                    <div class="profile-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3>Ananda Putra Utama</h3>
+                    <p class="user-role">Premium Member (Juragan Jir)</p>
+                    <div class="profile-menu-list">
+                        <div class="profile-menu-item hover-item"><i class="fa-solid fa-gear"></i> Account Settings <i class="fa-solid fa-chevron-right arrow"></i></div>
+                        <div class="profile-menu-item logout hover-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECTION FORM LOGIN (BARU) -->
+        <section id="login" class="page-section">
+            <div class="auth-container layout-center">
+                <div class="auth-card scale-up">
+                    <h2>Lah Balik Lagi LU</h2>
+                    <p class="auth-subtitle">Masukin Akun Kamu</p>
+                    
+                    <form onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label>Gmail Nya Apa</label>
+                            <input type="email" placeholder="Kulan@email.com" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Kata Sandiaga Uno</label>
+                            <input type="Kata Sandi" placeholder="••••••••" class="input-field">
+                        </div>
+                        <button type="submit" class="auth-btn click-animate">Sign In</button>
+                    </form>
+                    
+                    <p class="auth-switch">Belum punya akun? Gaptek Amat...<a href="#register" class="link-switch-auth">Daftar sekarang Biar ngga Gaptek</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SECTION FORM REGISTER (BARU) -->
+        <section id="register" class="page-section">
+            <div class="auth-container layout-center">
+                <div class="auth-card scale-up">
+                    <h2>Create Account</h2>
+                    <p class="auth-subtitle">Daftar gratis untuk mulai bertransaksi</p>
+                    
+                    <form onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Nama Lengkap" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="nama@email.com" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Minimal 8 karakter" class="input-field">
+                        </div>
+                        <button type="submit" class="auth-btn click-animate">Register</button>
+                    </form>
+                    
+                    <p class="auth-switch">Sudah punya akun? <a href="#login" class="link-switch-auth">Masuk di sini</a></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JS Untuk Interaksi & Perpindahan Section Sempurna -->
+    <script>
+        const links = document.querySelectorAll('.nav-item, .link-move-section, .link-switch-auth, .dropdown-link');
+        const sections = document.querySelectorAll('.page-section');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetHash = link.getAttribute('href');
+                if (targetHash && targetHash.startsWith('#')) {
+                    e.preventDefault();
+                    
+                    // Efek OnClick Ringan pada Tombol Menu
+                    link.classList.add('clicked-state');
+                    setTimeout(() => link.classList.remove('clicked-state'), 200);
+
+                    // Navigasi Pindah Section
+                    links.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('section-active'));
+
+                    // Aktifkan Menu Navigasi yang Sesuai
+                    const exactNav = document.querySelector(`.nav-links a[href="${targetHash}"]`);
+                    if (exactNav) exactNav.classList.add('active');
+                    
+                    // Tampilkan Section
+                    const targetSection = document.querySelector(targetHash);
+                    if (targetSection) targetSection.classList.add('section-active');
+                }
+            });
+        });
+
+        function handleCardClick(itemName) {
+            console.log(`Card ${itemName} clicked!`);
+        }
+        function filterCategory(cat) {
+            console.log(`Filtering by ${cat}`);
+        }
+    </script>
+</body>
+</html>

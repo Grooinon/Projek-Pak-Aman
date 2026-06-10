@@ -1,0 +1,36 @@
+/* ==========================================
+   STYLE MENU: SHOPPING CART
+   ========================================== */
+.cart-layout { display: block; width: 100%; }
+.cart-layout::after { content: ""; display: table; clear: both; }
+
+.cart-items-list { width: 63%; float: left; }
+.cart-summary { width: 33%; float: right; background-color: var(--bg-card); padding: 2.2rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05); }
+
+.cart-item { display: block; width: 100%; background-color: var(--bg-card); padding: 1.5rem 2rem; border-radius: 20px; margin-bottom: 1.2rem; border: 1px solid rgba(255, 255, 255, 0.03); }
+.cart-item::after { content: ""; display: table; clear: both; }
+
+.item-icon { float: left; font-size: 2.2rem; color: var(--primary-color); margin-top: 0.3rem; margin-right: 1.5rem; }
+.item-details { float: left; }
+.item-details h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem; }
+.item-details p { color: var(--text-muted); font-size: 0.95rem; }
+
+.quantity-control { float: right; margin-top: 0.25rem; background-color: rgba(0, 0, 0, 0.25); padding: 0.6rem 1.2rem; border-radius: 50px; }
+.quantity-control button { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 0.9rem; transition: var(--transition-smooth); }
+.quantity-control button:hover { color: var(--primary-color); }
+.quantity-control span { margin: 0 1rem; font-weight: 600; }
+
+.cart-summary h3 { font-size: 1.4rem; margin-bottom: 1.8rem; }
+.summary-line { display: block; width: 100%; margin-bottom: 1.2rem; color: var(--text-muted); font-size: 0.98rem; }
+.summary-line span:first-child { float: left; }
+.summary-line span:last-child { float: right; color: var(--text-main); font-weight: 500; }
+.summary-line.line-break { border-top: 1px solid rgba(255, 255, 255, 0.08); margin: 1.5rem 0; padding: 0; }
+
+.summary-line.total { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 2rem; }
+.summary-line.total span:last-child { color: var(--primary-color); font-weight: 700; }
+
+.checkout-btn { width: 100%; padding: 1.1rem; background-color: var(--primary-color); border: none; border-radius: 14px; color: var(--text-main); font-weight: 600; font-size: 1rem; cursor: pointer; transition: var(--transition-smooth); }
+.checkout-btn:hover { background-color: var(--primary-dark); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25); }
+
+.slide-in-left { animation: slideInLeft 0.5s ease forwards; }
+.slide-in-right { animation: slideInRight 0.5s ease forwards; }

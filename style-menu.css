@@ -1,0 +1,38 @@
+/* ==========================================
+   STYLE MENU: PRODUCTS & HOVER CARDS
+   ========================================== */
+.menu-grid { display: block; width: 100%; }
+.menu-grid::after { content: ""; display: table; clear: both; }
+
+.menu-card {
+    width: 48%; float: left; margin-right: 4%; background-color: var(--bg-card);
+    border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth); margin-bottom: 2rem; cursor: pointer;
+}
+.menu-card:nth-child(2n) { margin-right: 0; }
+
+/* MouseOver & Hover State Layering */
+.menu-card:hover { transform: translateY(-10px); border-color: var(--primary-color); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+
+.card-img {
+    height: 200px; background-color: rgba(255, 255, 255, 0.02); display: flex;
+    justify-content: center; align-items: center; font-size: 4rem; color: var(--primary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03); transition: var(--transition-smooth);
+}
+.menu-card:hover .card-img { color: var(--text-main); background-color: rgba(99, 102, 241, 0.1); }
+
+.card-body { padding: 1.8rem; }
+.card-body h3 { margin-bottom: 0.6rem; font-size: 1.35rem; font-weight: 600; }
+.card-body p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1.8rem; }
+
+.card-footer { display: block; width: 100%; }
+.card-footer::after { content: ""; display: table; clear: both; }
+.price { float: left; font-weight: 700; font-size: 1.3rem; margin-top: 0.4rem; }
+
+.add-to-cart-btn {
+    float: right; background-color: rgba(255, 255, 255, 0.08); border: none;
+    color: var(--text-main); width: 44px; height: 44px; border-radius: 50px;
+    cursor: pointer; transition: var(--transition-smooth); font-size: 1rem;
+}
+.menu-card:hover .add-to-cart-btn { background-color: var(--primary-color); transform: scale(1.1); }
+.scale-up { animation: scaleUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }

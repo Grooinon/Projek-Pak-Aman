@@ -1,0 +1,44 @@
+/* ==========================================
+   STYLE MENU: HERO SECTION (HOME)
+   ========================================== */
+.home-wrapper { display: block; width: 100%; padding-top: 2rem; }
+.home-wrapper::after { content: ""; display: table; clear: both; }
+
+.hero-content { width: 50%; float: left; padding-right: 3rem; }
+.hero-image { width: 50%; float: right; }
+
+.hero-content h1 { font-size: 3.8rem; line-height: 1.15; font-weight: 700; margin-bottom: 1.5rem; transition: var(--transition-smooth); }
+/* Hover & MouseOver State untuk Text Header Figma */
+.header-hover:hover { color: var(--primary-color); transform: translateX(5px); }
+
+.hero-content p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem; }
+
+/* Hover & Animasi CTA Button */
+.cta-button {
+    display: inline-block; padding: 1.1rem 2.8rem; background-color: var(--primary-color);
+    color: var(--text-main); text-decoration: none; font-weight: 600; border-radius: 50px;
+    transition: var(--transition-smooth); position: relative; overflow: hidden;
+}
+.cta-button .arrow-animate { margin-left: 8px; transition: var(--transition-smooth); }
+/* Hover Move Link Animation Interaction */
+.cta-button:hover { background-color: var(--primary-dark); padding-right: 3.2rem; }
+.cta-button:hover .arrow-animate { transform: translateX(6px); }
+
+/* Hero Image Placeholder Interaktif */
+.image-placeholder {
+    width: 100%; height: 420px; background: linear-gradient(135deg, var(--bg-card), #334155);
+    border-radius: 28px; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; font-size: 4.5rem; color: var(--text-muted);
+    border: 2px dashed rgba(255, 255, 255, 0.12); position: relative; cursor: pointer; transition: var(--transition-smooth);
+}
+.hover-overlay-text { font-size: 1rem; font-weight: 500; margin-top: 1rem; opacity: 0; transition: var(--transition-smooth); transform: translateY(10px); }
+
+/* MouseOver Canvas Image Wrapper Interaction */
+.mouseover-card:hover .image-placeholder { border-color: var(--primary-color); background: linear-gradient(135deg, var(--bg-card), #4338ca); color: var(--text-main); }
+.mouseover-card:hover .hover-overlay-text { opacity: 1; transform: translateY(0); }
+
+/* Trigger Animasi */
+.fade-in { animation: fadeIn 0.8s ease forwards; }
+.fade-in-delayed { animation: fadeIn 0.8s ease forwards; animation-delay: 0.2s; opacity: 0; }
+.slide-up { animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.pulse { animation: pulse 2s infinite; }
